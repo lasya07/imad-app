@@ -36,7 +36,7 @@ app.get('/test-db',function(req,res){
         }else{
             result.send(JSON.stringify(result));
         }
-    })
+    });
 });
 app.get('/article-three',function(req,res){
     res.send('Article-three requested and will be served here');
