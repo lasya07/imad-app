@@ -18,6 +18,30 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var articleOne ={
+    title:'Article-one|lasya',
+    heading:'Article one',
+    date: '23 october,2017',
+    content:`
+        <p>
+              First article to be written here.First article to be written here.
+              First article to be written here.
+              First article to be written here.
+              First article to be written here.
+          </p>
+          <p>
+              First article to be written here.First article to be written here.
+              First article to be written here.
+              First article to be written here.
+              First article to be written here.
+          </p>
+          <p>
+              First article to be written here.First article to be written here.
+              First article to be written here.
+              First article to be written here.
+              First article to be written here.
+          </p>`
+   };
 /*app.get('/articles/:articleName',function(req,res){
     pool.query("SELECT * from article where title='"+req.params.articleName+"'",function(req,res){
       if(err){
