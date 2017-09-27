@@ -18,7 +18,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var articleOne ={
+var articles={
+    'article-one':{
     title:'Article-one|lasya',
     heading:'Article one',
     date: '23 october,2017',
@@ -41,6 +42,23 @@ var articleOne ={
               First article to be written here.
               First article to be written here.
           </p>`
+   },
+    'article-two':{
+    title:'Article-two|lasya',
+    heading:'Article two',
+    date: '23 october,2017',
+    content:`
+        <p>
+        Second  article to be written here.
+        </p>`},
+    'article-three':{
+    title:'Article-three|lasya',
+    heading:'Article three',
+    date: '23 october,2017',
+    content:`
+        <p>
+        Third article to be written here.
+        </p>`}
    };
    
 function createTemplate(data){
@@ -113,8 +131,8 @@ app.get('/test-db',function(req,res){
         }
     });
 });*/
-app.get('/article-one',function(req,res){
-    res.send(createTemplate(articleOne));
+app.get('/:articleName',function(req,res){
+    res.send(createTemplate(articles[articleName]));
 });
 
 
