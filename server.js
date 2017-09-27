@@ -42,6 +42,42 @@ var articleOne ={
               First article to be written here.
           </p>`
    };
+   
+function createTemplate(data){
+    
+    var title=data.title;
+    var date=data.date;
+    var content=data.content;
+    var heading=data.heading;
+   var htmlTemplate=
+   `<html>
+  <head>
+      <title>
+      ${title}
+      </title>
+      <link href="ui/style.css" rel="stylesheet"/>
+  
+  </head>
+  <body>
+      <div class="container">
+      <div>
+          <a href="/">Home</a>
+      </div>
+      <hr>
+      <h3>${heading}</h3>
+      <div>
+          ${date}
+      </div>
+      <div>
+         ${content}
+      </div>
+      </div>
+  </body>
+</html>
+`;
+    return htmlTemplate
+    
+}
 /*app.get('/articles/:articleName',function(req,res){
     pool.query("SELECT * from article where title='"+req.params.articleName+"'",function(req,res){
       if(err){
@@ -78,7 +114,7 @@ app.get('/test-db',function(req,res){
     });
 });*/
 app.get('/article-one',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+    res.send(createTemplate(articleOne));
 });
 
 
