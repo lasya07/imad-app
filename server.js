@@ -68,7 +68,7 @@ var articles={
   
 };
 var pool=new Pool(config);
-function createTemplate(data){
+/*function createTemplate(data){
     
     var title=data.title;
     var date=data.date;
@@ -102,7 +102,7 @@ function createTemplate(data){
 `;
     return htmlTemplate;
     
-}
+}*/
 app.get('/articles/:articleName',function(req,res){
     
     //select * from article where title="article-one"
@@ -124,7 +124,7 @@ app.get('/articles/:articleName',function(req,res){
 });
 
 
-app.get('/test-db',function(req,res){
+/*app.get('/test-db',function(req,res){
     //make a select request
     //return a response with the results
     pool.query('SELECT * FROM test',function(err,result){
@@ -135,7 +135,7 @@ app.get('/test-db',function(req,res){
             res.send(JSON.stringify(result.rows));
         }
     });
-});
+});*/
 
 /*app.get('/:articleName',function(req,res){
     var articleName=req.params.articleName;
