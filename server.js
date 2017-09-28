@@ -67,7 +67,7 @@ var articles={
         </p>`}
   
 };
-   
+var pool=new Pool(config);
 function createTemplate(data){
     
     var title=data.title;
@@ -103,8 +103,10 @@ function createTemplate(data){
     return htmlTemplate;
     
 }
-/*app.get('/articles/:articleName',function(req,res){
-    pool.query("SELECT * from article where title='"+req.params.articleName+"'",function(req,res){
+app.get('/articles/:articleName',function(req,res){
+    
+    //select * from article where title="article-one"
+    pool.query("SELECT * from article where title= '"+req.params.articleName+"'",function(req,res){
       if(err){
             res.status(500).send(err.toString());
             
@@ -119,10 +121,9 @@ function createTemplate(data){
         
     });
    
-});*/
+});
 
 
-var pool=new Pool(config);
 app.get('/test-db',function(req,res){
     //make a select request
     //return a response with the results
@@ -136,10 +137,10 @@ app.get('/test-db',function(req,res){
     });
 });
 
-app.get('/:articleName',function(req,res){
+/*app.get('/:articleName',function(req,res){
     var articleName=req.params.articleName;
     res.send(createTemplate(articles[articleName]));
-});
+});*/
 
 
 
