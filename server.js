@@ -24,7 +24,7 @@ app.get('/counter', function (req, res) {
   res.send(counter.toString());
 });
 
-var articles={
+/*var articles={
     'article-one':{
     title:'Article-one|lasya',
     heading:'Article one',
@@ -66,7 +66,7 @@ var articles={
         Third article to be written here.
         </p>`}
   
-};
+};*/
 var pool=new Pool(config);
 /*function createTemplate(data){
     
